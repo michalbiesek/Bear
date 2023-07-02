@@ -69,7 +69,7 @@ jobs:
                 apk add python3 cmake gcc g++ pkgconf make fmt-dev spdlog-dev nlohmann-json protobuf-dev grpc grpc-dev c-ares-dev re2-dev gtest-dev
                 ;;
               arch*)
-                pacman -Sy --noconfirm python cmake make gcc pkg-config grpc spdlog fmt nlohmann-json gtest gmock
+                pacman -Syy --noconfirm python cmake make gcc glibc pkg-config grpc spdlog fmt nlohmann-json gtest gmock
                 ;;
             esac
 
