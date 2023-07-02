@@ -24,6 +24,8 @@ jobs:
             distro: fedora_latest
           - arch: ppc64le
             distro: fedora_latest
+          - arch: riscv64
+            distro: alpine_edge
 
     steps:
       - uses: actions/checkout@v3
