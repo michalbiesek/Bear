@@ -24,10 +24,12 @@ jobs:
             distro: fedora_latest
           - arch: ppc64le
             distro: fedora_latest
+          - arch: riscv64
+            distro: alpine_edge
 
     steps:
       - uses: actions/checkout@v3
-      - uses: uraimo/run-on-arch-action@v2.1.1
+      - uses: uraimo/run-on-arch-action@v2.5.0
         name: Build
         id: build
         with:
@@ -67,7 +69,7 @@ jobs:
                 apk add python3 cmake gcc g++ pkgconf make fmt-dev spdlog-dev nlohmann-json protobuf-dev grpc grpc-dev c-ares-dev re2-dev gtest-dev
                 ;;
               arch*)
-                pacman -Sy --noconfirm python cmake make gcc pkg-config grpc spdlog fmt nlohmann-json gtest gmock
+                pacman -Syy --noconfirm python cmake make gcc glibc pkg-config grpc spdlog fmt nlohmann-json gtest gmock
                 ;;
             esac
 
